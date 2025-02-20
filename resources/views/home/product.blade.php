@@ -32,103 +32,19 @@
     <!-- Template Stylesheet -->
     <link href="apex-1.0.0/css/style.css" rel="stylesheet" />
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        .product-title {
+            color: #000;
+            font-weight: bold;
         }
 
-        /* Layout utama */
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
+        .price {
+            color: blue;
+            font-size: 24px;
+            font-weight: bold;
         }
 
-        .filter {
-            width: 20%;
-            padding: 20px;
-        }
-
-        .product-list {
-            width: 80%;
-            padding: 20px;
-        }
-
-        .product-card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        /* Brand Section */
-        .brand-section {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            text-align: right;
-            margin-top: 5rem;
-            padding-right: 5%;
-        }
-
-        .brand-logos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            gap: 1rem;
-        }
-
-        .brand-logo {
-            width: 120px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .brand-list img {
-            width: 120px;
-            height: 60px;
-            /* height: 40px; */
-            margin-right: 10px;
-        }
-
-        .brand-list {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .filter {
-                width: 100%;
-                border-right: none;
-                border-bottom: 1px solid #ddd;
-                padding-bottom: 15px;
-            }
-
-            .product-list {
-                width: 100%;
-            }
-
-            .brand-section {
-                align-items: center;
-                text-align: center;
-                padding-right: 0;
-            }
-
-            .search-container {
-                position: static;
-                margin-bottom: 10px;
-            }
-
-            .brand-logos {
-                justify-content: center;
-            }
-        }
-
-        p {
-            color: black;
+        .btn-custom {
+            margin: 5px;
         }
     </style>
 </head>
@@ -136,98 +52,90 @@
 <body>
     @include('components_template.header')
 
-    <div class="brand-section">
-        <div class="search-container">
-            <input type="text" placeholder="Search..." class="search-box">
-        </div>
-        <p>Brand of PT. Perintis Sukses Sejahtera</p>
-        <div class="brand-logos">
-            <img src="apex-1.0.0/img/fact-1.jpg" alt="Isotech" class="brand-logo">
-            <img src="apex-1.0.0/img/fact-2.jpg" alt="M" class="brand-logo">
-            <img src="apex-1.0.0/img/fact-3.jpg" alt="Nishida" class="brand-logo">
-            <img src="apex-1.0.0/img/fact-4.jpg" alt="Master" class="brand-logo">
-        </div>
-    </div><br>
+    <div class="container mt-5">
+        <nav>
+            <a href="{{ route('explore_products') }}">Product</a> > <a href="#"> <strong>TIG-300</strong></a>
+        </nav>
 
-    <div class="container-fluid">
-        <div class="border-start border-5 border-danger ps-4 mb-5">
-            <h2 class="fw-bold">Product</h2>
-        </div>
-        <div class="product-container d-flex">
-            <!-- Sidebar Filter -->
-            <div class="filter border-end">
-                <h5>Filter</h5>
-                <select class="form-select mb-3">
-                    <option>Category</option>
-                </select>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="weldingMachine" checked>
-                    <label class="form-check-label" for="weldingMachine">Welding Machine</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="weldingTools">
-                    <label class="form-check-label" for="weldingTools">Welding Tools</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="weldingConsumable">
-                    <label class="form-check-label" for="weldingConsumable">Welding Consumable</label>
-                </div>
+        <div class="row align-items-center mt-4">
+            <!-- Gambar Produk -->
+            <div class="col-md-6 text-center">
+                <img src="apex-1.0.0/img/fact-1.jpg" alt="TIG-300" class="img-fluid" />
             </div>
 
-            <!-- Product Listing -->
-            <div class="product-list">
-                <div class="border-start border-5 border-danger ps-4 mb-5">
-                    <h3>Welding Machine</h3>
-                    <p>Brand Included</p>
-                </div>
-                <div class="brand-list d-flex mb-3">
-                    <img src="apex-1.0.0/img/fact-1.jpg" alt="Isotech">
-                    <img src="apex-1.0.0/img/fact-2.jpg" alt="Master">
-                    <img src="apex-1.0.0/img/fact-3.jpg" alt="Nishida">
-                    <img src="apex-1.0.0/img/fact-4.jpg" alt="Lincoln">
-                </div>
-
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="product-card">
-                            <a href="{{ route('product', ['slug' => 'tig-150-400A']) }}" target="_blank">
-                                <img src="apex-1.0.0/img/fact-1.jpg" alt="TIG 150-400A" class="img-fluid">
-                            </a>
-                            <p>TIG 150-400A</p>
-                            <button class="btn btn-dark">Request Quotation</button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="product-card">
-                            <a href="halaman-tujuan.html" target="_blank">
-                                <img src="apex-1.0.0/img/fact-2.jpg" alt="KAP 8-20L" class="img-fluid">
-                            </a>
-                            <p>KAP 8-20L</p>
-                            <button class="btn btn-dark">Request Quotation</button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="product-card">
-                            <a href="halaman-tujuan.html" target="_blank">
-                                <img src="apex-1.0.0/img/fact-3.jpg" alt="CUT 40-200" class="img-fluid">
-                            </a>
-                            <p>CUT 40-200</p>
-                            <button class="btn btn-dark">Request Quotation</button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="product-card">
-                            <a href="halaman-tujuan.html" target="_blank">
-                                <img src="apex-1.0.0/img/fact-4.jpg" alt="CUT 40-200" class="img-fluid">
-                            </a>
-                            <p>CUT 40-200</p>
-                            <button class="btn btn-dark">Request Quotation</button>
-                        </div>
-                    </div>
-                </div>
+            <!-- Detail Produk -->
+            <div class="col-md-6">
+                <h1 class="product-title">TIG-300</h1>
+                <h2 class="price">Rp 4.500.000</h2>
+                <table class="table table-bordered mt-3">
+                    <tr>
+                        <th>Input Voltage (V)</th>
+                        <td>3PH AC380V±15%, 50/60HZ</td>
+                    </tr>
+                    <tr>
+                        <th>Input Current (A)</th>
+                        <td>MMA: 11.5 / TIG: 9.6</td>
+                    </tr>
+                    <tr>
+                        <th>Input Power Capacity (KVA)</th>
+                        <td>MMA: 7.5 / TIG: 6.3</td>
+                    </tr>
+                    <tr>
+                        <th>Output Current Range (A)</th>
+                        <td>MMA: 10-210 / TIG: 10-230</td>
+                    </tr>
+                    <tr>
+                        <th>Gas After-Flow Time (S)</th>
+                        <td>5-10 (AUTO)</td>
+                    </tr>
+                    <tr>
+                        <th>No-Load Voltage (V)</th>
+                        <td>61</td>
+                    </tr>
+                    <tr>
+                        <th>Rated Duty Cycle (%)</th>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <th>Efficiency (%)</th>
+                        <td>85</td>
+                    </tr>
+                    <tr>
+                        <th>Power Factor (COS dia.)</th>
+                        <td>0.93</td>
+                    </tr>
+                    <tr>
+                        <th>Electrode (MM)</th>
+                        <td>1.6-5.0</td>
+                    </tr>
+                    <tr>
+                        <th>Dimensions (MM)</th>
+                        <td>485×210×380</td>
+                    </tr>
+                    <tr>
+                        <th>Weight (KG)</th>
+                        <td>20.5</td>
+                    </tr>
+                </table>
+                <button class="btn btn-danger btn-custom">Shopee</button>
+                <button class="btn btn-success btn-custom">Tokopedia</button>
+                <button class="btn btn-primary btn-custom">WhatsApp</button>
+                <button class="btn btn-info btn-custom">Email</button>
+                <button class="btn btn-dark btn-custom">Request Quotation</button>
             </div>
         </div>
-    </div><br>
+
+        <h4 class="mt-4">Description</h4>
+        <ul>
+            <li>Advanced Mosfet inverter technology, strong resistance to high voltage and high temperature</li>
+            <li>With O.C & O.H protection, hot start</li>
+            <li>Molten tungsten electrode non-contact HF arc start method, which holds burning through the thin
+                workspace</li>
+            <li>With O.C & O.H protection, for long-term use</li>
+            <li>Capable of welding stainless steel and other easy oxidated nonferrous metal and alloy steel, such as
+                MIG, TIG or another alloy</li>
+        </ul>
+    </div>
 
     @include('components_template.footer')
 

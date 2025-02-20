@@ -20,12 +20,12 @@ class HomeController extends Controller
         ]);
     }
 
-    public function product($page)
+    public function product()
     {
         // dd('1');
         return view('home.product', [
             'type_menu' => 'explore_product',
-            'page' => $page
+            // 'page' => $page
         ]);
         // return view('home.product', compact('slug'));
     }

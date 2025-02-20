@@ -22,8 +22,8 @@ use Faker\Provider\ar_EG\Company;
 
 // Company Profile
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/explore-products', [HomeController::class, 'explore_products'])->name('explore_products');
-Route::get('/explore-products/{slug}', [HomeController::class, 'product'])->name('product');
+Route::get('/product', [HomeController::class, 'explore_products'])->name('explore_products');
+Route::get('/products', [HomeController::class, 'product'])->name('product');
 Route::get('/brand', [BrandController::class, 'index'])->name('brand');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact_us');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about_us');
