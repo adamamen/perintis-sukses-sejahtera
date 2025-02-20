@@ -150,10 +150,13 @@
 
         .request-quotation {
             background-color: #b01b1b;
-            padding: 60px 0;
+            padding: 60px 20px;
             text-align: center;
             margin-top: 50px;
-            margin-bottom: -48px
+            margin-bottom: -48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .request-quotation .btn {
@@ -165,7 +168,20 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            margin-top: -2.5%
+            margin-top: -2.5%;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .request-quotation {
+                padding: 40px 10px;
+            }
+
+            .request-quotation .btn {
+                font-size: 16px;
+                margin-bottom: 8%;
+                padding: 10px 25px;
+            }
         }
 
         .request-quotation .btn:hover {
@@ -232,7 +248,7 @@
         </div>
         <br>
         <div class="button-container">
-            <a href="#" class="explore">Explore Products</a>
+            <a href="{{ route('explore_products') }}" class="explore">Explore Products</a>
         </div>
     </div>
     <!-- Product Category End -->

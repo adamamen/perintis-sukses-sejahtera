@@ -32,25 +32,12 @@
     <!-- Template Stylesheet -->
     <link href="apex-1.0.0/css/style.css" rel="stylesheet" />
     <style>
-        /* Reset Default */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        /* Container utama */
         .accordion-container {
             width: 100%;
             text-align: center;
             padding-top: 10px;
         }
 
-        /* Title Section */
         .accordion-title {
             font-size: 24px;
             font-weight: bold;
@@ -67,18 +54,15 @@
             margin: 3px auto 0;
         }
 
-        /* Navigasi Tab */
         .accordion-nav {
             display: flex;
             width: 100%;
             background-color: #333;
             justify-content: space-between;
-            /* Pastikan tombol tersebar merata */
         }
 
         .accordion-nav button {
             flex: 1;
-            /* Setiap tombol mengambil porsi yang sama */
             text-align: center;
             background: none;
             border: none;
@@ -87,24 +71,19 @@
             font-size: 14px;
             cursor: pointer;
             padding: 12px 0;
-            /* Sesuaikan padding agar tidak terlalu besar */
             position: relative;
             transition: background-color 0.3s ease;
             border-right: 1px solid rgba(255, 255, 255, 0.3);
-            /* Tambahkan garis pemisah */
         }
 
-        /* Hilangkan garis pemisah di tombol terakhir */
         .accordion-nav button:last-child {
             border-right: none;
         }
 
-        /* Hover Effect */
         .accordion-nav button:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Garis bawah pada tombol aktif */
         .accordion-nav button.active::after {
             content: "";
             width: 50px;
@@ -116,24 +95,21 @@
             transform: translateX(-50%);
         }
 
-        /* Konten yang ditampilkan */
         .content {
             display: none;
             padding: 15px;
             text-align: center;
-            max-width: 800px;
+            max-width: 1900px;
             margin: 10px auto;
             border: 1px solid #ddd;
             background-color: #f9f9f9;
             border-radius: 5px;
         }
 
-        /* Tampilkan konten aktif */
         .content.active {
             display: block;
         }
 
-        /* Responsiveness */
         @media (max-width: 768px) {
             .accordion-nav {
                 flex-direction: column;
@@ -150,7 +126,6 @@
             }
         }
 
-
         .about-title {
             text-align: center;
             font-size: 28px;
@@ -161,11 +136,167 @@
 
         .about-title::after {
             content: "";
-            width: 50px;
+            width: 130px;
             height: 3px;
             background-color: red;
             display: block;
             margin: 8px auto;
+        }
+
+        .content p {
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .content center {
+            color: black;
+        }
+
+        .header {
+            background-color: #4a2ef5;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            text-align: left;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .header::after {
+            content: '\2197';
+            font-size: 40px;
+            font-weight: bold;
+            position: absolute;
+            right: 10px;
+            top: 47%;
+            transform: translateY(-120%);
+        }
+
+        .content_card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 580px;
+            min-height: 160px;
+            padding: 20px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: center;
+            color: black
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .card {
+                max-width: 100%;
+            }
+        }
+
+        .carousel-container {
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .title {
+            display: inline-block;
+            border-bottom: 3px solid red;
+            padding-bottom: 5px;
+        }
+
+        .carousel-item img {
+            width: 500px;
+            height: 310px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        #brandCarouselClient .carousel-item img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel-control-prev {
+            left: 0;
+        }
+
+        .carousel-control-next {
+            right: 0;
+        }
+
+        .brand-section {
+            margin-top: 40px;
+        }
+
+        .brand-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand-logo {
+            width: 120px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -177,6 +308,7 @@
         <h2 class="about-title">About Us</h2>
     </div>
 
+    {{-- Accordion --}}
     <div class="accordion-nav">
         <button class="active" onclick="showContent('overview', this)">Overview</button>
         <button onclick="showContent('history', this)">History</button>
@@ -184,22 +316,176 @@
         <button onclick="showContent('industries', this)">Industries</button>
         <button onclick="showContent('commitment', this)">Commitment</button>
     </div>
-
     <div id="overview" class="content active">
-        <p>At PT. PERINTIS SUKSES SEJAHTERA, we are committed to being a leading distributor of welding equipment...</p>
+        <p>
+            <center>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore neque molestiae doloremque expedita
+                vero.
+                Culpa maiores odio aliquid praesentium maxime soluta consectetur quod, qui non dignissimos ipsa
+                corrupti,
+                doloribus pariatur! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias veniam illo a
+                officiis possimus dicta earum fugiat laborum sapiente incidunt libero vel magnam odio, minus accusantium
+                eligendi officia, quis consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni,
+                odio
+                facere cupiditate deleniti labore porro dolorem iste? Aspernatur sint dolorem velit consequuntur,
+                numquam
+                obcaecati earum, deleniti, dolores consequatur illo eveniet.
+            </center>
+        </p>
     </div>
     <div id="history" class="content">
-        <p>Our company was originally established as CV. PERINTIS SUKSES in Bekasi, West Java...</p>
+        <p>
+            <center>Our company was originally established as CV. PERINTIS SUKSES in Bekasi, West Java...</center>
+        </p>
     </div>
     <div id="growth" class="content">
-        <p>Over the years, we have expanded our product line to meet industry demands...</p>
+        <p>
+            <center>Over the years, we have expanded our product line to meet industry demands...</center>
+        </p>
     </div>
     <div id="industries" class="content">
-        <p>We serve a wide range of industries including manufacturing, construction, and automotive...</p>
+        <p>
+            <center>We serve a wide range of industries including manufacturing, construction, and automotive...
+            </center>
+        </p>
     </div>
     <div id="commitment" class="content">
-        <p>Our commitment is to provide high-quality products, excellent service, and customer satisfaction...</p>
+        <p>
+            <center>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus in quaerat nisi voluptas
+                error
+                quibusdam omnis alias voluptatem cupiditate. Voluptas accusamus aliquid, officiis sed quae ullam!
+                Maiores,
+                deserunt illum?</center>
+        </p>
+    </div><br>
+    {{-- Accordion End --}}
+
+    {{-- Let’s Build Success Together! --}}
+    <div class="header">
+        <h1 style="color: white">Let’s Build Success Together!</h1>
+        <p>We are ready to be your trusted partner in welding equipment and industrial solutions. Whether you are
+            working on a large-scale industrial project or need reliable tools for your business, <strong>PT. PERINTIS
+                SUKSES SEJAHTERA</strong> is here to help.</p>
+    </div><br>
+    {{-- Let’s Build Success Together! End --}}
+
+    {{-- Visi, Misi Motto --}}
+    <div class="content_card">
+        <div class="card">
+            <h3>
+                Vision
+            </h3>
+            <p>"To be the leading and most trusted distributor company, recognized as the partner of choice by
+                prioritizing customer satisfaction."</p>
+        </div>
+        <div class="card">
+            <h3>
+                Mission
+            </h3>
+            <p>Deliver high-quality products with a commitment to ensuring customer satisfaction and supporting the
+                growth of employees by upholding company values.</p>
+            <p>Build strong and mutually beneficial partnerships with all stakeholders to create exceptional
+                customer
+                service and long-term business success.</p>
+        </div>
+        <div class="card">
+            <h3>
+                Motto
+            </h3>
+            <p>"Customer Satisfaction and Trust Are Our Top Priorities."</p>
+        </div>
+    </div><br>
+    {{-- Visi, Misi Motto End --}}
+
+    {{-- Client  --}}
+    <div class="container-fluid my-5">
+        <div class="we-provide-brands text-center">
+            <h2 class="title">Client</h2>
+        </div>
+
+        <!-- Carousel -->
+        <div id="brandCarouselClient" class="carousel slide mt-4 carousel-container" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center gap-3">
+                        <img src="apex-1.0.0/img/fact-1.jpg" class="img-fluid" alt="Brand 1">
+                        <img src="apex-1.0.0/img/fact-2.jpg" class="img-fluid" alt="Brand 2">
+                        <img src="apex-1.0.0/img/fact-3.jpg" class="img-fluid" alt="Brand 3">
+                        <img src="apex-1.0.0/img/fact-3.jpg" class="img-fluid" alt="Brand 4">
+                        <img src="apex-1.0.0/img/fact-3.jpg" class="img-fluid" alt="Brand 5">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center gap-3">
+                        <img src="apex-1.0.0/img/fact-4.jpg" class="img-fluid" alt="Brand 6">
+                        <img src="apex-1.0.0/img/fact-3.jpg" class="img-fluid" alt="Brand 7">
+                        <img src="apex-1.0.0/img/fact-2.jpg" class="img-fluid" alt="Brand 8">
+                        <img src="apex-1.0.0/img/fact-2.jpg" class="img-fluid" alt="Brand 9">
+                        <img src="apex-1.0.0/img/fact-2.jpg" class="img-fluid" alt="Brand 10">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#brandCarouselClient"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#brandCarouselClient"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+            </button>
+        </div>
     </div>
+    {{-- Client End  --}}
+
+    {{-- Project  --}}
+    <div class="container-fluid my-5">
+        <div class="we-provide-brands text-center">
+            <h2 class="title">Projects</h2>
+        </div>
+
+        <!-- Carousel -->
+        <div id="brandCarouselProject" class="carousel slide mt-4 carousel-container" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center gap-3">
+                        <img src="apex-1.0.0/img/fact-1.jpg" class="img-fluid" alt="Brand 1">
+                        <img src="apex-1.0.0/img/fact-2.jpg" class="img-fluid" alt="Brand 2">
+                        <img src="apex-1.0.0/img/fact-3.jpg" class="img-fluid" alt="Brand 3">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center gap-3">
+                        <img src="apex-1.0.0/img/fact-4.jpg" class="img-fluid" alt="Brand 6">
+                        <img src="apex-1.0.0/img/fact-3.jpg" class="img-fluid" alt="Brand 7">
+                        <img src="apex-1.0.0/img/fact-2.jpg" class="img-fluid" alt="Brand 8">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#brandCarouselProject"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#brandCarouselProject"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <div class="brand-section text-center mt-5">
+            <p style="color: black">Find more about our another brand</p>
+            <div class="brand-logos d-flex justify-content-center gap-3">
+                <img src="apex-1.0.0/img/fact-1.jpg" alt="Isotech" class="brand-logo">
+                <img src="apex-1.0.0/img/fact-2.jpg" alt="M" class="brand-logo">
+                <img src="apex-1.0.0/img/fact-3.jpg" alt="Nishida" class="brand-logo">
+                <img src="apex-1.0.0/img/fact-4.jpg" alt="Master" class="brand-logo">
+            </div>
+        </div>
+    </div>
+    {{-- Project  End --}}
 
     @include('components_template.footer')
 
@@ -218,11 +504,9 @@
     <script src="apex-1.0.0/js/main.js"></script>
     <script>
         function showContent(id, element) {
-            // Menyembunyikan semua konten
             document.querySelectorAll(".content").forEach(el => el.classList.remove("active"));
             document.getElementById(id).classList.add("active");
 
-            // Menghapus status aktif dari semua tombol
             document.querySelectorAll(".accordion-nav button").forEach(btn => btn.classList.remove("active"));
             element.classList.add("active");
         }

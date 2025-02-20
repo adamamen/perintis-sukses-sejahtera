@@ -277,7 +277,7 @@
 
         .brand-logo {
             width: 120px;
-            height: 60px;
+            height: 50px;
             object-fit: cover;
             border-radius: 5px;
         }
@@ -366,14 +366,6 @@
             <div class="container-xxl py-5">
                 <div class="container">
                     <div class="row g-5">
-                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 450px">
-                            <div class="position-relative h-100">
-                                <iframe class="position-relative w-100 h-100"
-                                    src="https://maps.google.com/maps?width=779&amp;height=450&amp;hl=en&amp;q=perintis sukses sejahtera&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                    frameborder="0" style="min-height: 450px; border: 0" allowfullscreen=""
-                                    aria-hidden="false" tabindex="0"></iframe>
-                            </div>
-                        </div>
                         <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                             <div class="border-start border-5 border-danger ps-4 mb-5">
                                 <h6 class="text-body text-uppercase mb-2">Appointment / Quotation</h6>
@@ -413,8 +405,8 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control border-0 bg-light"
-                                                id="industry" placeholder="industry" />
+                                            <input type="text" class="form-control border-0 bg-light" id="industry"
+                                                placeholder="industry" />
                                             <label for="industry">Industry</label>
                                         </div>
                                     </div>
@@ -449,6 +441,14 @@
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 450px">
+                            <div class="position-relative h-100">
+                                <iframe class="position-relative w-100 h-100"
+                                    src="https://maps.google.com/maps?width=779&amp;height=450&amp;hl=en&amp;q=perintis sukses sejahtera&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                                    frameborder="0" style="min-height: 450px; border: 0" allowfullscreen=""
+                                    aria-hidden="false" tabindex="0"></iframe>
+                            </div>
                         </div>
                         <div class="brand-section text-center mt-5">
                             <p>Find more about our another brand</p>
