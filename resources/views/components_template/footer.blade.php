@@ -221,8 +221,10 @@
                     <p>Jl. Inspeksi Kalimalang, Setiadarma</p>
                     <p>Tambun Selatan, Kabupaten Bekasi</p>
                     <p>Jawa Barat 17510 - Indonesia</p>
-                    <p>+62 21 8839 4890 - +62 21 8837 0217</p>
-                    <button class="quote-button">Request Quotation</button>
+                    <p>+62 21 8839 4890 - +62 21 8837 0217</p><br>
+                    <button class="quote-button"
+                        onclick="location.href='{{ route('contact_us') }}#service-wrapper'">Request
+                        Quotation</button>
                 </div>
             </div>
         </div>

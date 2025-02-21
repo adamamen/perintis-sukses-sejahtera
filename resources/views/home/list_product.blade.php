@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Apex - Home Repair Website Template</title>
+    <title>{{ $title }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -190,7 +190,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="product-card">
-                            <a href="{{ route('product', ['slug' => 'tig-150-400A']) }}" target="_blank">
+                            <a href="{{ route('product', ['page' => 'tig-150-400A']) }}" target="_blank">
                                 <img src="apex-1.0.0/img/fact-1.jpg" alt="TIG 150-400A" class="img-fluid">
                             </a>
                             <p>TIG 150-400A</p>

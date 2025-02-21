@@ -8,25 +8,31 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $title = 'Home - Perintis Sukses Sejahtera';
+
         return view('home.index', [
-            'type_menu' => 'home'
+            'type_menu' => 'home',
+            'title'     => $title
         ]);
     }
 
     public function explore_products()
     {
+        $title = 'Explore Products - Perintis Sukses Sejahtera';
+
         return view('home.list_product', [
-            'type_menu' => 'explore_product'
+            'type_menu' => 'explore_product',
+            'title'     => $title
         ]);
     }
 
     public function product()
     {
-        // dd('1');
+        $title = 'Product - Perintis Sukses Sejahtera';
+
         return view('home.product', [
             'type_menu' => 'explore_product',
-            // 'page' => $page
+            'title'     => $title
         ]);
-        // return view('home.product', compact('slug'));
     }
 }

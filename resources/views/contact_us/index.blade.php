@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Apex - Home Repair Website Template</title>
+    <title>{{ $title }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -346,7 +346,7 @@
                     </div>
                 </div>
             </div><br>
-            <div class="service-wrapper">
+            <div class="service-wrapper" id="service-wrapper">
                 <p>We are here to help by providing</p>
                 <div class="service-container">
                     <div class="service-item">
@@ -405,8 +405,8 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control border-0 bg-light" id="industry"
-                                                placeholder="industry" />
+                                            <input type="text" class="form-control border-0 bg-light"
+                                                id="industry" placeholder="industry" />
                                             <label for="industry">Industry</label>
                                         </div>
                                     </div>
