@@ -13,7 +13,9 @@ class AuthController extends Controller
 {
     public function index()
     {
-        return view('login.index');
+        $title = 'Login - Perintis Sukses Sejahtera';
+
+        return view('login.index', compact('title'));
     }
 
     public function login(Request $request)
