@@ -35,14 +35,16 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 // Logout
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
-Route::prefix('admin')->group(function () {
-    Route::get('/login', [AuthController::class, 'index']);
-    Route::post('/login', [AuthController::class, 'login'])->name('login');
+require __DIR__ . '/admin.php';
 
-    Route::middleware('auth')->group(function () {
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    });
-});
+// Route::prefix('admin')->group(function () {
+//     Route::get('/login', [AuthController::class, 'index']);
+//     Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+//     Route::middleware('auth')->group(function () {
+//         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+//     });
+// });
 
 // Dashboard
 // Route::get('/dashboard-general-dashboard', function () {
