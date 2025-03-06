@@ -6,3 +6,12 @@
  */
 
 "use strict";
+
+$(function () {
+    $(".magnific").magnificPopup({
+        type: "image",
+        gallery: {
+            enabled: true,
+        },
+    });
+});

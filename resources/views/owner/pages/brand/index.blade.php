@@ -33,7 +33,7 @@
                                 <div class="clearfix mb-3"></div>
 
                                 <div class="table-responsive">
-                                    <table class="table-striped table">
+                                    <table class="table-striped table" id="table-brand">
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
@@ -47,13 +47,37 @@
                                             @foreach ($brands as $brand)
                                                 <tr>
                                                     <td>{{ $brand->name }}</td>
-                                                    <td>{{ $brand->logo_picture }}</td>
-                                                    <td>{{ $brand->banner_picture }}</td>
+                                                    <td>
+                                                        <div class="photo-container-small">
+                                                            @if ($brand->logo_picture == null)
+                                                                <img src="{{ asset('uploads/no_photo.png') }}"
+                                                                    alt="">
+                                                            @else
+                                                                <a href="{{ asset('uploads/' . $brand->logo_picture) }}"
+                                                                    class="magnific"><img
+                                                                        src="{{ asset('uploads/' . $brand->logo_picture) }}"
+                                                                        alt=""></a>
+                                                            @endif
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="photo-container-small">
+                                                            @if ($brand->banner_picture == null)
+                                                                <img src="{{ asset('uploads/no_photo.png') }}"
+                                                                    alt="">
+                                                            @else
+                                                                <a href="{{ asset('uploads/' . $brand->banner_picture) }}"
+                                                                    class="magnific"><img
+                                                                        src="{{ asset('uploads/' . $brand->banner_picture) }}"
+                                                                        alt=""></a>
+                                                            @endif
+                                                        </div>
+                                                    </td>
                                                     <td>{{ $brand->url }}</td>
                                                     <td>
-                                                        <a href="{{ route('owner.product.edit', $brand->id) }}"
+                                                        <a href="{{ route('owner.brand.edit', $brand->id) }}"
                                                             class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                                        <a href="{{ route('owner.product.destroy', $brand->id) }}"
+                                                        <a href="{{ route('owner.brand.destroy', $brand->id) }}"
                                                             class="btn btn-danger btn-sm"
                                                             onClick="return confirm('{{ __('Are you sure?') }}')"><i
                                                                 class="fas fa-trash"></i></a>
@@ -74,6 +98,10 @@
 
 @push('scripts')
     <!-- JS Libraies -->
-
+    <script>
+        $(function() {
+            $("#table-brand").dataTable({});
+        })
+    </script>
     <!-- Page Specific JS File -->
 @endpush

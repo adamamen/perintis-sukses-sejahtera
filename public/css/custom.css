@@ -2,7 +2,16 @@
  *
  * You can write your CSS code here, DO NOT touch the default JavaScript file
  * because it will make it harder for you to update.
- * 
+ *
  */
 
 /*# sourceMappingURL=custom.css.map */
+
+.photo-container-small img {
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    object-fit: cover;
+}

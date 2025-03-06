@@ -28,7 +28,7 @@ class OwnerBrandController extends Controller
     {
         $request->validate([
             'name' => ['required', 'unique:brand'],
-            'url' => ['required','alpha_dash', 'unique:brand'],
+            'url' => ['required', 'alpha_dash', 'unique:brand'],
             'logo_picture' => ['required', 'mimes:jpeg,png,gif'],
             'logo_picture2' => ['required', 'mimes:jpeg,png,gif'],
             'banner_picture' => ['required', 'mimes:jpeg,png,gif'],
@@ -54,5 +54,15 @@ class OwnerBrandController extends Controller
         $brand->save();
 
         return redirect()->route('owner.brand')->with('success', __('Data is added successfully'));
+    }
+
+    public function edit($id)
+    {
+        $brand = Brand::find($id);
+
+        return view('owner.pages.brand.edit', [
+            'type_menu' => 'company',
+            'brand' => $brand
+        ]);
     }
 }
