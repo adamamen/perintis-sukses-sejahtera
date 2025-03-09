@@ -27,28 +27,9 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>All Posts</h4>
+                                <h4>All Product</h4>
                             </div>
                             <div class="card-body">
-                                {{-- <div class="float-left">
-                                    <select class="form-control selectric">
-                                        <option>Action For Selected</option>
-                                        <option>Move to Draft</option>
-                                        <option>Move to Pending</option>
-                                        <option>Delete Pemanently</option>
-                                    </select>
-                                </div>
-                                <div class="float-right">
-                                    <form>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary"><i class="fas fa-search"></i></button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div> --}}
-
                                 <div class="clearfix mb-3"></div>
 
                                 <div class="table-responsive">
@@ -58,6 +39,7 @@
                                                 <th>Name</th>
                                                 <th>slug</th>
                                                 <th>Category</th>
+                                                <th>Brand</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -67,11 +49,11 @@
                                                     <td>{{ $product->name }}</td>
                                                     <td>{{ $product->slug }}</td>
                                                     <td>{{ $product->id_category }}</td>
-                                                    <td>{{ $product->id_category }}</td>
+                                                    <td>{{ $product->id_brand }}</td>
                                                     <td>
-                                                        <a href="{{ route('owner.product.edit', $service->id) }}"
+                                                        <a href="{{ route('owner.product.edit', $product->id) }}"
                                                             class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                                                        <a href="{{ route('owner.product.destroy', $service->id) }}"
+                                                        <a href="{{ route('owner.product.destroy', $product->id) }}"
                                                             class="btn btn-danger btn-sm"
                                                             onClick="return confirm('{{ __('Are you sure?') }}')"><i
                                                                 class="fas fa-trash"></i></a>

@@ -36,24 +36,28 @@ class OwnerBrandController extends Controller
 
         $brand = new Brand();
 
-        $final_name = 'brand_' . time() . '.' . $request->logo_picture->extension();
+        $final_name = 'logo_picture' . time() . '.' . $request->logo_picture->extension();
         $request->logo_picture->move(public_path('uploads'), $final_name);
         $brand->logo_picture = $final_name;
 
-        $final_name2 = 'brand_' . time() . '.' . $request->logo_picture2->extension();
+        $final_name2 = 'logo_picture2' . time() . '.' . $request->logo_picture2->extension();
         $request->logo_picture2->move(public_path('uploads'), $final_name2);
         $brand->logo_picture2 = $final_name2;
 
-        $final_name3 = 'brand_' . time() . '.' . $request->banner_picture->extension();
+        $final_name3 = 'banner_picture' . time() . '.' . $request->banner_picture->extension();
         $request->banner_picture->move(public_path('uploads'), $final_name3);
         $brand->banner_picture = $final_name3;
+
+        $final_name4 = 'bg_logo_picture' . time() . '.' . $request->bg_logo_picture->extension();
+        $request->bg_logo_picture->move(public_path('uploads'), $final_name4);
+        $brand->bg_logo_picture = $final_name4;
 
         $brand->name = $request->name;
         $brand->url = strtolower($request->url);
         $brand->is_own = $request->is_own;
         $brand->save();
 
-        return redirect()->route('owner.brand')->with('success', __('Data is added successfully'));
+        return redirect()->route('owner.brand')->with('success', 'Data is added successfully');
     }
 
     public function edit($id)
@@ -64,5 +68,25 @@ class OwnerBrandController extends Controller
             'type_menu' => 'company',
             'brand' => $brand
         ]);
+    }
+
+    public function destroy($id)
+    {
+        $brand = Brand::find($id);
+
+        if ($brand->logo_picture) {
+            unlink(public_path('uploads/' . $brand->logo_picture));
+        }
+        if ($brand->logo_picture2) {
+            unlink(public_path('uploads/' . $brand->logo_picture2));
+        }
+        if ($brand->banner_picture) {
+            unlink(public_path('uploads/' . $brand->banner_picture));
+        }
+        if ($brand->bg_logo_picture) {
+            unlink(public_path('uploads/' . $brand->bg_logo_picture));
+        }
+        $brand->delete();
+        return redirect()->route('owner.brand');
     }
 }

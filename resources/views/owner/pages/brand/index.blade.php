@@ -27,7 +27,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>All Posts</h4>
+                                <h4>All Brand</h4>
                             </div>
                             <div class="card-body">
                                 <div class="clearfix mb-3"></div>
@@ -101,6 +101,12 @@
     <script>
         $(function() {
             $("#table-brand").dataTable({});
+            $(".magnific").magnificPopup({
+                type: "image",
+                gallery: {
+                    enabled: true,
+                },
+            });
         })
     </script>
     <!-- Page Specific JS File -->

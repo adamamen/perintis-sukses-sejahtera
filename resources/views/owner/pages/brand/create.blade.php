@@ -1,6 +1,6 @@
 @extends('owner.layouts.app')
 
-@section('title', 'Create New Product')
+@section('title', 'Brand')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -16,7 +16,7 @@
                 <div class="section-header-back">
                     <a href="{{ URL::previous() }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
                 </div>
-                <h1>Create New Post</h1>
+                <h1>Create New Brand</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
                     <div class="breadcrumb-item"><a href="#">Brands</a></div>
@@ -26,22 +26,15 @@
 
             <div class="section-body">
                 <h2 class="section-title">Create New Brand</h2>
-                <p class="section-lead">
-                    On this page you can create a new brand and fill in all fields.
-                </p>
-
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>Write Your Brands</h4>
-                            </div>
                             <div class="card-body">
                                 <div>
                                     @if ($errors->any())
                                         <ul>
                                             @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
+                                                <li class="text-danger">{{ $error }}</li>
                                             @endforeach
                                         </ul>
 
@@ -50,82 +43,64 @@
                                 <form action="{{ route('owner.brand.store') }}" method="post"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
-                                        <div class="col-sm-12 col-md-7">
-                                            <input type="text" class="form-control" name="name" id="name"
-                                                value="{{ old('name') }}">
-                                        </div>
-                                    </div>
 
-                                    <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Url
-                                            Slug</label>
-                                        <div class="col-sm-12 col-md-7">
-                                            <input type="text" class="form-control" id="url" name="url"
-                                                value="{{ old('url') }}">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Name *</label>
+                                                <input type="text" class="form-control" name="name" id="name"
+                                                    value="{{ old('name') }}">
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Logo
-                                            Picture</label>
-                                        <div class="col-sm-12 col-md-7">
-                                            <div id="image-preview1" class="image-preview">
-                                                <label for="logo_picture" class="image-label">Choose File</label>
-                                                <input type="file" name="logo_picture" id="logo_picture" />
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Slug url *</label>
+                                                <input type="text" class="form-control" name="url" id="url"
+                                                    value="{{ old('url') }}">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Logo Picture
-                                            2</label>
-                                        <div class="col-sm-12 col-md-7">
-                                            <div id="image-preview2" class="image-preview">
-                                                <label for="image-upload" class="image-label">Choose File</label>
-                                                <input type="file" name="logo_picture2" id="logo_picture2" />
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Owner ?</label>
+                                        <select class="form-control selectric" id="is_own" name="is_own">
+                                            <option value="1">YES</option>
+                                            <option value="0">NO</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="row mb-4">
+
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Logo *</label>
+                                                <div><input type="file" name="logo_picture" id="logo_picture"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Logo 2 *</label>
+                                                <div><input type="file" name="logo_picture2" id="logo_picture2"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Banner Picture *</label>
+                                                <div><input type="file" name="banner_picture" id="banner_picture"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Background Logo Picture</label>
+                                                <div><input type="file" name="bg_logo_picture" id="bg_logo_picture">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Banner
-                                            Picture</label>
-                                        <div class="col-sm-12 col-md-7">
-                                            <div id="image-preview3" class="image-preview">
-                                                <label for="image-upload" class="image-label">Choose File</label>
-                                                <input type="file" name="banner_picture" id="banner_picture" />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Background
-                                            Logo
-                                            Picture</label>
-                                        <div class="col-sm-12 col-md-7">
-                                            <input type="text" class="form-control" id="input_bg_logo_picture"
-                                                name="input_bg_logo_picture" value="{{ old('input_bg_logo_picture') }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Owner ?</label>
-                                        <div class="col-sm-12 col-md-7">
-                                            <select class="form-control selectric" id="is_own" name="is_own">
-                                                <option value="1">YES</option>
-                                                <option value="0">NO</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row mb-4">
-                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                                        <div class="col-sm-12 col-md-7">
-                                            <button class="btn btn-primary" type="submit">Create Brand</button>
-                                        </div>
-                                    </div>
+                                    <button class="btn btn-primary" type="submit">Create Brand</button>
                                 </form>
                             </div>
                         </div>
@@ -143,38 +118,14 @@
     <script src="{{ asset('library/selectric/public/jquery.selectric.min.js') }}"></script>
     <script src="{{ asset('library/upload-preview/upload-preview.js') }}"></script>
 
-    <!-- Page Specific JS File -->
-    <script src="{{ asset('js/page/features-post-create.js') }}"></script>
-
     <script>
-        $.uploadPreview({
-            input_field: "#logo_picture", // Default: .image-upload
-            preview_box: "#image-preview1", // Default: .image-preview
-            label_field: "#image-label", // Default: .image-label
-            label_default: "Choose File", // Default: Choose File
-            label_selected: "Change File", // Default: Change File
-            no_label: false, // Default: false
-            success_callback: null, // Default: null
-        });
-
-        $.uploadPreview({
-            input_field: "#logo_picture2", // Default: .image-upload
-            preview_box: "#image-preview2", // Default: .image-preview
-            label_field: "#image-label", // Default: .image-label
-            label_default: "Choose File", // Default: Choose File
-            label_selected: "Change File", // Default: Change File
-            no_label: false, // Default: false
-            success_callback: null, // Default: null
-        });
-
-        $.uploadPreview({
-            input_field: "#banner_picture", // Default: .image-upload
-            preview_box: "#image-preview3", // Default: .image-preview
-            label_field: "#image-label", // Default: .image-label
-            label_default: "Choose File", // Default: Choose File
-            label_selected: "Change File", // Default: Change File
-            no_label: false, // Default: false
-            success_callback: null, // Default: null
-        });
+        $(function() {
+            $(".magnific").magnificPopup({
+                type: "image",
+                gallery: {
+                    enabled: true,
+                },
+            });
+        })
     </script>
 @endpush
