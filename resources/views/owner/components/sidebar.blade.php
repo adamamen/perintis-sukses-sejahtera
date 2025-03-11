@@ -19,16 +19,27 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Company</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ Request::is('owner/product') ? 'active' : '' }}">
+                    <li class="{{ Request::is('owner/product/*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('owner.product') }}">Product</a>
                     </li>
-                    <li class="{{ Request::is('owner/category') ? 'active' : '' }}">
+                    <li class="{{ Request::is('owner/category/*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('owner.category') }}">Category</a>
                     </li>
-                    <li class="{{ Request::is('owner/brand') ? 'active' : '' }}">
+                    <li class="{{ Request::is('owner/brand/*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('owner.brand') }}">Brand</a>
                     </li>
                 </ul>
+            </li>
+
+            <li class="{{ $type_menu == 'other-page' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('owner.other-page') }}">
+                    <i class="fas fa-folder"></i> <span>Other Page</span>
+                </a>
+            </li>
+            <li class="{{ $type_menu == 'general-setting' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('owner.setting-general') }}">
+                    <i class="fas fa-folder"></i> <span>Website Setting</span>
+                </a>
             </li>
         </ul>
     </aside>

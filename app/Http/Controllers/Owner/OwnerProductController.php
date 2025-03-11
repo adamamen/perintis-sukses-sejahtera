@@ -12,6 +12,8 @@ class OwnerProductController extends Controller
 {
     public function index()
     {
+
+
         $products = Product::all();
         return view('owner.pages.product.index', [
             'type_menu' => 'company',

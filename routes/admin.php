@@ -6,7 +6,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Owner\OwnerAuthController;
 use App\Http\Controllers\Owner\OwnerBrandController;
 use App\Http\Controllers\Owner\OwnerCategoryController;
+use App\Http\Controllers\Owner\OwnerOtherPageController;
 use App\Http\Controllers\Owner\OwnerProductController;
+use App\Http\Controllers\Owner\OwnerSettingController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function () {
@@ -52,5 +54,11 @@ Route::prefix('owner')->group(function () {
         Route::get('/brand/edit/{id}', [OwnerBrandController::class, 'edit'])->name('owner.brand.edit');
         Route::post('/brand/update/{id}', [OwnerBrandController::class, 'update'])->name('owner.brand.update');
         Route::get('/brand/destroy/{id}', [OwnerBrandController::class, 'destroy'])->name('owner.brand.destroy');
+
+
+        Route::get('/other-page/index', [OwnerOtherPageController::class, 'index'])->name('owner.other-page');
+        Route::post('/other-page/about-us', [OwnerOtherPageController::class, 'updatePageAboutUs'])->name('owner.other-page.aboutus');
+        Route::get('/setting/general', [OwnerSettingController::class, 'index'])->name('owner.setting-general');
+        Route::post('/setting/general', [OwnerSettingController::class, 'update'])->name('owner.setting-general.update');
     });
 });

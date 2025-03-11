@@ -24,3 +24,7 @@
     padding: 5px;
     object-fit: cover;
 }
+
+.w_50_p {
+    width: 50% !important;
+}
