@@ -34,7 +34,8 @@
                         <p class="text-muted">Before you get started, you must login or register if you don't already
                             have an account.</p>
 
-                        <form method="POST" action="{{ route('owner.login') }}" class="needs-validation" novalidate="">
+                        <form method="POST" action="{{ route('owner.login') }}" class="needs-validation"
+                            novalidate="">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             @if ($errors->has('message'))
                                 <div class="alert alert-danger">

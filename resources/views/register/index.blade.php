@@ -111,7 +111,7 @@
                         } else {
                             swal('Sukses', 'Data berhasil disimpan', 'success').then(
                                 () => {
-                                    window.location.href = "{{ url('/admin/login') }}";
+                                    window.location.href = "{{ url('/owner/login') }}";
                                 });
                         }
                     },

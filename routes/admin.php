@@ -11,16 +11,16 @@ use App\Http\Controllers\Owner\OwnerProductController;
 use App\Http\Controllers\Owner\OwnerSettingController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('admin')->group(function () {
-    Route::get('/login', [AuthController::class, 'index']);
-    Route::post('/login', [AuthController::class, 'login'])->name('login');
-
-    Route::middleware('auth')->group(function () {
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
-        // Route::get
-    });
-});
+// Route::prefix('admin')->group(function () {
+//     Route::get('/login', [AuthController::class, 'index']);
+//     Route::post('/login', [AuthController::class, 'login'])->name('login');
+// 
+//     Route::middleware('auth')->group(function () {
+//         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+// 
+//         // Route::get
+//     });
+// });
 
 Route::prefix('owner')->group(function () {
     Route::get('/login', [OwnerAuthController::class, 'index']);

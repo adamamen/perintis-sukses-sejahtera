@@ -317,45 +317,30 @@
         <button onclick="showContent('commitment', this)">Commitment</button>
     </div>
     <div id="overview" class="content active">
-        <p>
-            <center>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore neque molestiae doloremque expedita
-                vero.
-                Culpa maiores odio aliquid praesentium maxime soluta consectetur quod, qui non dignissimos ipsa
-                corrupti,
-                doloribus pariatur! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias veniam illo a
-                officiis possimus dicta earum fugiat laborum sapiente incidunt libero vel magnam odio, minus accusantium
-                eligendi officia, quis consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni,
-                odio
-                facere cupiditate deleniti labore porro dolorem iste? Aspernatur sint dolorem velit consequuntur,
-                numquam
-                obcaecati earum, deleniti, dolores consequatur illo eveniet.
-            </center>
-        </p>
+        @foreach ($data as $value)
+            <p>
+                <center>{{ $value->overview }}</center>
+            </p>
+        @endforeach
     </div>
     <div id="history" class="content">
         <p>
-            <center>Our company was originally established as CV. PERINTIS SUKSES in Bekasi, West Java...</center>
+            <center>{{ $value->history }}</center>
         </p>
     </div>
     <div id="growth" class="content">
         <p>
-            <center>Over the years, we have expanded our product line to meet industry demands...</center>
+            <center>{{ $value->growth }}</center>
         </p>
     </div>
     <div id="industries" class="content">
         <p>
-            <center>We serve a wide range of industries including manufacturing, construction, and automotive...
-            </center>
+            <center>{{ $value->industries }}</center>
         </p>
     </div>
     <div id="commitment" class="content">
         <p>
-            <center>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum repellendus in quaerat nisi voluptas
-                error
-                quibusdam omnis alias voluptatem cupiditate. Voluptas accusamus aliquid, officiis sed quae ullam!
-                Maiores,
-                deserunt illum?</center>
+            <center>{{ $value->commitment }}<center>
         </p>
     </div><br>
     {{-- Accordion End --}}
@@ -382,17 +367,13 @@
             <h3>
                 Mission
             </h3>
-            <p>Deliver high-quality products with a commitment to ensuring customer satisfaction and supporting the
-                growth of employees by upholding company values.</p>
-            <p>Build strong and mutually beneficial partnerships with all stakeholders to create exceptional
-                customer
-                service and long-term business success.</p>
+            <p>{{ $value->mission }}</p>
         </div>
         <div class="card">
             <h3>
                 Motto
             </h3>
-            <p>"Customer Satisfaction and Trust Are Our Top Priorities."</p>
+            <p>{{ $value->motto }}</p>
         </div>
     </div><br>
     {{-- Visi, Misi Motto End --}}
