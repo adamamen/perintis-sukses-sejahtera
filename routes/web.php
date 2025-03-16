@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ShopController;
 use Faker\Provider\ar_EG\Company;
 
 /*
@@ -27,6 +28,8 @@ Route::get('/product', [HomeController::class, 'product'])->name('product');
 Route::get('/brand', [BrandController::class, 'index'])->name('brand');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact_us');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about_us');
+
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 
 // Route register
 Route::get('/register', [AuthController::class, 'index_register']);

@@ -109,7 +109,7 @@
     <!-- Our Brands End -->
 
     {{-- Welding Machine Section  --}}
-    <div class="container-fluid">
+    <div class="container-fluid ">
         <div class="section-header">
             <div class="section-line"></div>
             <h2 class="section-title">WELDING MACHINE</h2>
