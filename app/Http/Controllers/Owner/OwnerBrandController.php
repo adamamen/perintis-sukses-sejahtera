@@ -28,7 +28,7 @@ class OwnerBrandController extends Controller
     {
         $request->validate([
             'name' => ['required', 'unique:brand'],
-            'url' => ['required', 'alpha_dash', 'unique:brand'],
+            // 'url' => ['required', 'alpha_dash', 'unique:brand'],
             'logo_picture' => ['required', 'mimes:jpeg,png,gif'],
             'logo_picture2' => ['required', 'mimes:jpeg,png,gif'],
             'banner_picture' => ['required', 'mimes:jpeg,png,gif'],
@@ -53,7 +53,7 @@ class OwnerBrandController extends Controller
         $brand->bg_logo_picture = $final_name4;
 
         $brand->name = $request->name;
-        $brand->url = strtolower($request->url);
+        // $brand->url = strtolower($request->url);
         $brand->is_own = $request->is_own;
         $brand->save();
 

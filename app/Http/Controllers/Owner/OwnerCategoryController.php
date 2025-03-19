@@ -30,7 +30,7 @@ class OwnerCategoryController extends Controller
         $request->validate([
             'name' => ['required'],
             'category_code' => ['required'],
-            'sub_category_name' => ['required'],
+            // 'sub_category_name' => ['required'],
             'picture_url' => ['required', 'mimes:jpeg,png,gif']
         ]);
 

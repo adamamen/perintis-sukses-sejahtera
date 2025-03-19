@@ -561,6 +561,73 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-danger btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <div id="QuickView" class="white-popup mfp-hide">
+        <div class="container bg-white position-relative">
+            <div class="row gx-60">
+                <div class="col-lg-6">
+                    <div class="product-big-img">
+                        <div class="img">
+                            <img src="assets/img/product/product_1_1.png" alt="Product Image" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 align-self-center">
+                    <div class="product-about">
+                        <p class="price">$125.00</p>
+                        <h2 class="product-title">Brembo Disc Brake S2</h2>
+                        <div class="product-rating">
+                            <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+                                <span style="width: 100%">Rated <strong class="rating">5.00</strong> out of 5 based
+                                    on <span class="rating">1</span> customer rating</span>
+                            </div>
+                            <a href="shop-details.html" class="woocommerce-review-link">(<span
+                                    class="count">2</span> customer reviews)</a>
+                        </div>
+                        <p class="text">
+                            Syndicate customized growth strategies prospective human capital
+                            leverage other's optimal e-markets without transparent catalysts
+                            for change.
+                        </p>
+                        <div class="checklist">
+                            <ul>
+                                <li>
+                                    <i class="far fa-circle-check"></i> Lifetime structural, one
+                                    year face finish warranty
+                                </li>
+                                <li>
+                                    <i class="far fa-circle-check"></i>Mapped from “Center Caps”
+                                    under ” tment” tab
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="actions">
+                            <div class="quantity">
+                                <input type="number" class="qty-input" step="1" min="1"
+                                    max="100" name="quantity" value="1" title="Qty" />
+                                <button class="quantity-plus qty-btn">
+                                    <i class="far fa-chevron-up"></i>
+                                </button>
+                                <button class="quantity-minus qty-btn">
+                                    <i class="far fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <button class="as-btn">Add to Cart</button>
+                        </div>
+                        <div class="product_meta">
+                            <span class="sku_wrapper">SKU: <span class="sku">wheel-fits-chevy-camaro</span></span>
+                            <span class="posted_in">Category:
+                                <a href="shop.html" rel="tag">Tires & Wheels</a></span>
+                            <span>Tags: <a href="shop.html">automotive parts</a><a href="shop.html">wheels</a></span>
+                        </div>
+                    </div>
+                    <button title="Close (Esc)" type="button" class="mfp-close">
+                        ×
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

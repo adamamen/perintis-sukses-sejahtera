@@ -10,7 +10,7 @@ class ShopController extends Controller
     {
         $title = 'Brand - Perintis Sukses Sejahtera';
 
-        return view('shop.index', [
+        return view('frontend.pages.shop.index', [
             'type_menu' => 'brand',
             'title'     => $title
         ]);

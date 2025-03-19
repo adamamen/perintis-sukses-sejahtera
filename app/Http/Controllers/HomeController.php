@@ -10,7 +10,7 @@ class HomeController extends Controller
     {
         $title = 'Home - Perintis Sukses Sejahtera';
 
-        return view('home.index', [
+        return view('frontend.pages.home.index', [
             'type_menu' => 'home',
             'title'     => $title
         ]);
