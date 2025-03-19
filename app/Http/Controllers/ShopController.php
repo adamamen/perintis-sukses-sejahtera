@@ -15,4 +15,14 @@ class ShopController extends Controller
             'title'     => $title
         ]);
     }
+
+    public function detail()
+    {
+        $title = 'Brand - Perintis Sukses Sejahtera';
+
+        return view('shop.detail', [
+            'type_menu' => 'brand',
+            'title'     => $title
+        ]);
+    }
 }

@@ -30,6 +30,7 @@ Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact_
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about_us');
 
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+Route::get('/shop/detail', [ShopController::class, 'detail'])->name('shop.detail');
 
 // Route register
 Route::get('/register', [AuthController::class, 'index_register']);
