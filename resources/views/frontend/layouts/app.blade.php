@@ -9,7 +9,8 @@
     <meta content="" name="description" />
 
     <!-- Favicon -->
-    <link href="apex-1.0.0/img/favicon.ico" rel="icon" />
+    <link rel="shortcut icon" href="{{ asset('uploads/' . $global_setting->favicon) }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('uploads/' . $global_setting->favicon) }}" type="image/x-icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,6 +35,7 @@
     <!-- Template Stylesheet -->
     <link href="{{ asset('apex-1.0.0/css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('dealarohtml/style.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('dealarohtml/fontawesome.min.css') }}" rel="stylesheet" /> --}}
     <style>
         .product-category {
             text-align: center;

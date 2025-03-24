@@ -79,7 +79,7 @@
     <div class="container-fluid my-5">
         <div class="find-more-about-our-brands"
             style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-            <h2 class="title"> Shop Details</h2>
+            <h2 class="title">Product Detail</h2>
         </div>
     </div>
     <!-- Our Brands End -->

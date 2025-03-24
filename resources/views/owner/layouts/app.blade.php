@@ -7,6 +7,9 @@
     {{-- <title>@yield('title') &mdash; Stisla</title> --}}
     <title>@yield('title')</title>
 
+    <link rel="shortcut icon" href="{{ asset('uploads/' . $global_setting->favicon) }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('uploads/' . $global_setting->favicon) }}" type="image/x-icon">
+
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('library/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -35,7 +38,6 @@
         // gtag('config', 'UA-94034622-3');
     </script>
     <!-- END GA -->
-</head>
 </head>
 
 <body>

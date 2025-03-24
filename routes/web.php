@@ -2,12 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\AboutUsController;
-use App\Http\Controllers\ShopController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
 use Faker\Provider\ar_EG\Company;
 
 /*
@@ -29,8 +29,8 @@ Route::get('/brand', [BrandController::class, 'index'])->name('brand');
 Route::get('/contact-us', [ContactUsController::class, 'index'])->name('contact_us');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about_us');
 
-Route::get('/shop', [ShopController::class, 'index'])->name('shop');
-Route::get('/shop/detail', [ShopController::class, 'detail'])->name('shop.detail');
+Route::get('/product', [ProductController::class, 'index'])->name('product');
+Route::get('/product/{slug}', [ProductController::class, 'detail'])->name('product.detail');
 
 // Route register
 Route::get('/register', [AuthController::class, 'index_register']);
@@ -41,19 +41,19 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middle
 
 require __DIR__ . '/admin.php';
 
-// Route::prefix('admin')->group(function () {
-//     Route::get('/login', [AuthController::class, 'index']);
-//     Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::prefix('admin')->group(function () {
+    Route::get('/login', [AuthController::class, 'index']);
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-//     Route::middleware('auth')->group(function () {
-//         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-//     });
-// });
+    Route::middleware('auth')->group(function () {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    });
+});
 
 // Dashboard
-// Route::get('/dashboard-general-dashboard', function () {
-//     return view('pages.dashboard-general-dashboard', ['type_menu' => 'dashboard']);
-// });
+Route::get('/dashboard-general-dashboard', function () {
+    return view('pages.dashboard-general-dashboard', ['type_menu' => 'dashboard']);
+});
 
 Route::get('/dashboard-ecommerce-dashboard', function () {
     return view('pages.dashboard-ecommerce-dashboard', ['type_menu' => 'dashboard']);

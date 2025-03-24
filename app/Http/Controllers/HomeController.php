@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -9,10 +10,11 @@ class HomeController extends Controller
     public function index()
     {
         $title = 'Home - Perintis Sukses Sejahtera';
-
+        $setting = Setting::find(1);
         return view('frontend.pages.home.index', [
             'type_menu' => 'home',
-            'title'     => $title
+            'title'     => $title,
+            'Setting' => $setting
         ]);
     }
 

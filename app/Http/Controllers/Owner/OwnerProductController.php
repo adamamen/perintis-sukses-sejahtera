@@ -36,7 +36,7 @@ class OwnerProductController extends Controller
     {
         $request->validate([
             'name' => ['required', 'unique:product'],
-            'slug' => ['required', 'alpha_dash', 'unique:product'],
+            // 'slug' => ['required', 'alpha_dash', 'unique:product'],
             'id_category' => ['required'],
             'id_brand' => ['required'],
             'description' => ['required'],
@@ -52,7 +52,7 @@ class OwnerProductController extends Controller
         $product->main_picture_url = $final_name;
 
         $product->name = $request->name;
-        $product->slug = $request->slug;
+        $product->slug = trim(preg_replace("/[^a-z0-9]+/", "-", strtolower($request->name)));
         $product->id_category = $request->id_category;
         $product->id_brand = $request->id_brand;
         $product->description = $request->description;
@@ -112,7 +112,6 @@ class OwnerProductController extends Controller
         $product->update();
 
         return redirect()->route('owner.product')->with('success', __('Data is updated successfully'));
-
     }
 
     public function destroy($id)

@@ -62,11 +62,16 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="text-center bg_eeeeee">
-                                                        {{-- <img src="{{ asset('uploads/' . $setting->logo) }}" alt=""
-                                                            class="w_200"> --}}
+                                                        <img src="{{ asset('uploads/' . $setting->logo) }}" alt=""
+                                                            class="w_200">
                                                     </td>
                                                     <td>
-                                                        <input type="file" name="logo">
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="logo"
+                                                                name="logo">
+                                                            <label class="custom-file-label" for="customFile">Choose
+                                                                file</label>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -82,11 +87,16 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="text-center bg_eeeeee">
-                                                        {{-- <img src="{{ asset('uploads/' . $setting->logo) }}" alt=""
-                                                            class="w_200"> --}}
+                                                        <img src="{{ asset('uploads/' . $setting->favicon) }}" alt=""
+                                                            class="w_200">
                                                     </td>
                                                     <td>
-                                                        <input type="file" name="logo">
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="favicon"
+                                                                name="favicon">
+                                                            <label class="custom-file-label" for="customFile">Choose
+                                                                file</label>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -103,10 +113,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="mb-3">
-                                                        <label for=""
-                                                            class="form-label">{{ __('Change Photo') }}</label>
+                                                        <label for="" class="form-label">Change Photo</label>
                                                         <div>
-                                                            <input type="file" name="image_404">
+                                                            <input type="file" name="image_404" class="custom-file-input"
+                                                                id="logo">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -150,6 +160,7 @@
                             </div>
                         </div>
                     </div>
+                    <button type="submit" class="btn btn-success btn-block mb_50 btn-common">Update</button>
                 </form>
             </div>
         </section>

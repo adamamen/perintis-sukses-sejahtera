@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
@@ -24,6 +25,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $setting_data = Setting::where('id', 1)->first();
         Schema::defaultStringLength(191);
+
+        view()->share('global_setting', $setting_data);
     }
 }

@@ -7,6 +7,17 @@
     .navbar-nav .nav-link:focus {
         color: red !important;
     }
+
+    .img_logo img {
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .img_logo {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
 </style>
 <!-- Spinner Start -->
 <div id="spinner"
@@ -48,7 +59,9 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
     <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center">
         <h1 class="m-0">
-            <i class="fa fa-building text-primary me-3"></i>APEX
+            <div class="img_logo">
+                <img src="{{ asset('uploads/' . $global_setting->logo) }}" alt="{{ env('APP_NAME') }}" </div>
+
         </h1>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -57,23 +70,14 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-3 py-lg-0">
             <a href="{{ route('home') }}" class="nav-item nav-link {{ $type_menu == 'home' ? 'active' : '' }}">Home</a>
+            <a href="{{ route('product') }}"
+                class="nav-item nav-link {{ $type_menu == 'product' ? 'active' : '' }}">Product</a>
             <a href="{{ route('brand') }}"
                 class="nav-item nav-link {{ $type_menu == 'brand' ? 'active' : '' }}">Brand</a>
             <a href="{{ route('contact_us') }}"
                 class="nav-item nav-link {{ $type_menu == 'contact_us' ? 'active' : '' }}">Contact Us</a>
             <a href="{{ route('about_us') }}"
                 class="nav-item nav-link {{ $type_menu == 'about_us' ? 'active' : '' }}">About Us</a>
-            {{-- <a href="service.html" class="nav-item nav-link">Our Services</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                <div class="dropdown-menu bg-light m-0">
-                    <a href="feature.html" class="dropdown-item">Features</a>
-                    <a href="appointment.html" class="dropdown-item">Appointment</a>
-                    <a href="team.html" class="dropdown-item">Our Team</a>
-                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    <a href="404.html" class="dropdown-item">404 Page</a>
-                </div>
-            </div> --}}
         </div>
     </div>
 </nav>

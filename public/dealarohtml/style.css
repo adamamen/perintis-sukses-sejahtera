@@ -47,7 +47,7 @@ Version: 1.0.0
     4.6. Blog
     4.7. Comments
     4.8. Hero Area
-    4.9. Error    
+    4.9. Error
     4.00. Popup Search
     4.00. Popup Side Menu
     4.00. Wocommerce
@@ -5812,7 +5812,7 @@ a.text-theme:hover,
 .widget_pages a:before,
 .widget_archive a:before,
 .widget_categories a:before {
-  content: "";
+  content: "";
   position: absolute;
   right: 25px;
   font-family: var(--icon-font);
