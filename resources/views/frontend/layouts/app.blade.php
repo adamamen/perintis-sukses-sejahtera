@@ -31,6 +31,7 @@
     <link href="{{ asset('apex-1.0.0/css/bootstrap.min.css') }}" rel="stylesheet" />
 
     <link rel="stylesheet" href="{{ asset('library/magnific-popup/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/slick/slick.min.css') }}">
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('apex-1.0.0/css/style.css') }}" rel="stylesheet" />
@@ -223,6 +224,7 @@
     <script src="{{ asset('apex-1.0.0/lib/waypoints/waypoints.min.js') }}"></script>
     <script src="{{ asset('apex-1.0.0/lib/owlcarousel/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('library/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('library/slick/slick.min.js') }}"></script>
 
     <!-- Template Javascript -->
     <script src="{{ asset('apex-1.0.0/js/main.js') }}"></script>

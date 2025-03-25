@@ -15,7 +15,7 @@ class ProductController extends Controller
         $products = Product::paginate(10);
         $productsTop = Product::where('is_top_product', 1)->limit(5)->get();
         $categories = Category::all();
-        return view('frontend.pages.shop.index', [
+        return view('frontend.pages.product.index', [
             'type_menu' => 'product',
             'title'     => $title,
             'products' => $products,
@@ -24,13 +24,17 @@ class ProductController extends Controller
         ]);
     }
 
-    public function detail()
+    public function detail($slug)
     {
         $title = 'Product - Perintis Sukses Sejahtera';
 
-        return view('shop.detail', [
+        $product = Product::where('slug', $slug)->first();
+        $productsRelate = Product::where('is_top_product', 1)->limit(5)->get();
+        return view('frontend.pages.product.detail', [
             'type_menu' => 'product',
-            'title'     => $title
+            'title'     => $title,
+            'product' => $product,
+            'productsRelate' => $productsRelate
         ]);
     }
 }
