@@ -12,7 +12,7 @@ class ProductController extends Controller
     {
         $title = 'Product - Perintis Sukses Sejahtera';
 
-        $products = Product::paginate(10);
+        $products = Product::paginate(9);
         $productsTop = Product::where('is_top_product', 1)->limit(5)->get();
         $categories = Category::all();
         return view('frontend.pages.product.index', [
