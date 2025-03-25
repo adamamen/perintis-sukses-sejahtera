@@ -20,13 +20,6 @@
                             @foreach ($products as $product)
                                 <div class="col-xl-4 col-sm-6">
                                     <div class="as-product">
-                                        {{-- <span class="tag">NEW</span> --}}
-                                        <div class="actions">
-                                            <a class="icon-btn popup-content" href="#QuickView"><i
-                                                    class="fa-regular fa-eye"></i></a>
-                                            {{-- <span class="icon-btn rating-btn"><i class="fa-regular fa-star"></i><span
-                                                    class="rating">4.9</span></span> --}}
-                                        </div>
                                         <div class="product-img">
                                             <img src="{{ asset('uploads/' . $product->main_picture_url) }}"
                                                 alt="product image" />
