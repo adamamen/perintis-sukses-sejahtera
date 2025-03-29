@@ -11,16 +11,6 @@ use App\Http\Controllers\Owner\OwnerProductController;
 use App\Http\Controllers\Owner\OwnerSettingController;
 use Illuminate\Support\Facades\Route;
 
-// Route::prefix('admin')->group(function () {
-//     Route::get('/login', [AuthController::class, 'index']);
-//     Route::post('/login', [AuthController::class, 'login'])->name('login');
-// 
-//     Route::middleware('auth')->group(function () {
-//         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-// 
-//         // Route::get
-//     });
-// });
 
 Route::prefix('owner')->group(function () {
     Route::get('/login', [OwnerAuthController::class, 'index']);
@@ -55,10 +45,11 @@ Route::prefix('owner')->group(function () {
         Route::post('/brand/update/{id}', [OwnerBrandController::class, 'update'])->name('owner.brand.update');
         Route::get('/brand/destroy/{id}', [OwnerBrandController::class, 'destroy'])->name('owner.brand.destroy');
 
-
         Route::get('/other-page/index', [OwnerOtherPageController::class, 'index'])->name('owner.other-page');
         Route::post('/other-page/about-us', [OwnerOtherPageController::class, 'updatePageAboutUs'])->name('owner.other-page.aboutus');
         Route::get('/setting/general', [OwnerSettingController::class, 'index'])->name('owner.setting-general');
         Route::post('/setting/general', [OwnerSettingController::class, 'update'])->name('owner.setting-general.update');
     });
 });
+
+Route::get('/logout', [OwnerAuthController::class, 'logout'])->name('logout')->middleware('auth');

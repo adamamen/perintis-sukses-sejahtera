@@ -73,7 +73,7 @@
 </head>
 
 <body>
-    @include('components_template.header')
+    @include('components_frontend.header')
 
     <!-- Our Brands -->
     <div class="container-fluid my-5">
@@ -132,8 +132,7 @@
                                     <div class="product-img">
                                         <img src="assets/img/product/product_1_1.png" alt="Product Image" />
                                         <div class="actions">
-                                            <a class="icon-btn" href="cart.html"><i
-                                                    class="fa-regular fa-heart"></i></a>
+                                            <a class="icon-btn" href="cart.html"><i class="fa-regular fa-heart"></i></a>
                                             <a class="icon-btn popup-content" href="#QuickView"><i
                                                     class="fa-regular fa-eye"></i></a>
                                             <span class="icon-btn rating-btn"><i class="fa-regular fa-star"></i><span
@@ -888,7 +887,7 @@
     </div>
     {{-- STEEL BEVEL & PRESSURE PAINT End --}}
 
-    @include('components_template.footer')
+    @include('components_frontend.footer')
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-danger btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

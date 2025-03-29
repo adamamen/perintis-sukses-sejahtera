@@ -14,7 +14,7 @@ class AboutUsController extends Controller
         $data  = CompanyProfile::all();
         $brand = DB::table('brand')->get();
 
-        return view('about_us.index', [
+        return view('frontend.pages.about_us.index', [
             'type_menu' => 'about_us',
             'title'     => $title,
             'data'      => $data,

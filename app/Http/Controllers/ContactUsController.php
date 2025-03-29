@@ -12,7 +12,7 @@ class ContactUsController extends Controller
         $title = 'Brand - Perintis Sukses Sejahtera';
         $brand = DB::table('brand')->get();
 
-        return view('contact_us.index', [
+        return view('frontend.pages.contact_us.index', [
             'type_menu' => 'contact_us',
             'title'     => $title,
             'brand'     => $brand

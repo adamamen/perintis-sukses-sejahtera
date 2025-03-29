@@ -197,7 +197,7 @@
 </head>
 
 <body>
-    @include('components_template.header')
+    @include('components_frontend.header')
 
     @yield('content')
 
@@ -208,7 +208,7 @@
         </button>
     </div>
 
-    @include('components_template.footer')
+    @include('components_frontend.footer')
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-danger btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

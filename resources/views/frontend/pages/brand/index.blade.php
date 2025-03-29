@@ -72,7 +72,7 @@
 </head>
 
 <body>
-    @include('components_template.header')
+    @include('components_frontend.header')
 
     <!-- Our Brands -->
     <div class="container-fluid my-5">
@@ -177,7 +177,7 @@
     </div><br>
     {{-- STEEL BEVEL & PRESSURE PAINT End --}}
 
-    @include('components_template.footer')
+    @include('components_frontend.footer')
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-danger btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

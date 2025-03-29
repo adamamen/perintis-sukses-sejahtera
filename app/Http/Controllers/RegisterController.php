@@ -6,36 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Models\M_User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class AuthController extends Controller
+class RegisterController extends Controller
 {
-    public function index()
-    {
-        $title = 'Login - Perintis Sukses Sejahtera';
-
-        return view('login.index', compact('title'));
-    }
-
-    public function login(Request $request)
-    {
-        $credentials = $request->only('username', 'password');
-        $validation  = M_User::where('username', $credentials['username'])->first();
-
-        if (empty($validation)) {
-            return back()->withErrors(['message' => 'Username tidak ditemukan.']);
-        } else if (!password_verify($credentials['password'], $validation->password)) {
-            return back()->withErrors(['message' => 'Password anda salah.']);
-        } else {
-            Auth::login($validation);
-            return redirect()->route('dashboard');
-        }
-    }
-
     public function index_register()
     {
-        return view('register.index');
+        return view('owner.register.index');
     }
 
     public function register(Request $request)
@@ -65,11 +42,5 @@ class AuthController extends Controller
 
             return response()->json(['message' => 'success']);
         }
-    }
-
-    public function logout()
-    {
-        Auth::logout();
-        return redirect('/admin/login');
     }
 }

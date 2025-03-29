@@ -12,7 +12,7 @@ class BrandController extends Controller
         $title = 'Brand - Perintis Sukses Sejahtera';
         $brand = DB::table('brand')->get();
 
-        return view('brand.index', [
+        return view('frontend.pages.brand.index', [
             'type_menu' => 'brand',
             'title'     => $title,
             'brand'     => $brand

@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('owner.layouts.auth')
 
 @section('title', 'Register')
 
