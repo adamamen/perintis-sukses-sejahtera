@@ -458,12 +458,14 @@
 
         <div class="brand-section text-center mt-5">
             <p style="color: black">Find more about our another brand</p>
-            <div class="brand-logos d-flex justify-content-center gap-3">
-                <img src="apex-1.0.0/img/fact-1.jpg" alt="Isotech" class="brand-logo">
-                <img src="apex-1.0.0/img/fact-2.jpg" alt="M" class="brand-logo">
+            @foreach ($brand as $value)
+                <div class="brand-logos d-flex justify-content-center gap-3">
+                    <img src="{{ asset('uploads/' . $value->logo_picture) }}" alt="Isotech" class="brand-logo">
+                    {{-- <img src="apex-1.0.0/img/fact-2.jpg" alt="M" class="brand-logo">
                 <img src="apex-1.0.0/img/fact-3.jpg" alt="Nishida" class="brand-logo">
-                <img src="apex-1.0.0/img/fact-4.jpg" alt="Master" class="brand-logo">
-            </div>
+                <img src="apex-1.0.0/img/fact-4.jpg" alt="Master" class="brand-logo"> --}}
+                </div>
+            @endforeach
         </div>
     </div>
     {{-- Project  End --}}

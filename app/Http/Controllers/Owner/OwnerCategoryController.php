@@ -13,7 +13,7 @@ class OwnerCategoryController extends Controller
     {
         $categories = Category::all();
         return view('owner.pages.category.index', [
-            'type_menu' => 'company',
+            'type_menu'  => 'company',
             'categories' => $categories
         ]);
     }
@@ -28,20 +28,20 @@ class OwnerCategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required'],
+            'name'          => ['required'],
             'category_code' => ['required'],
             // 'sub_category_name' => ['required'],
             'picture_url' => ['required', 'mimes:jpeg,png,gif']
         ]);
 
-        $category = new Category();
-        $category->name = $request->name;
-        $category->category_code = $request->category_code;
+        $category                    = new Category();
+        $category->name              = $request->name;
+        $category->category_code     = $request->category_code;
         $category->sub_category_name = $request->sub_category_name;
 
         $final_name = 'picture_url_' . time() . '.' . $request->picture_url->extension();
         $request->picture_url->move(public_path('uploads'), $final_name);
-        $category->picture_url = $final_name;
+        $category->picture_url    = $final_name;
         $category->is_discontinue = $request->is_discontinue;
 
         $category->save();
@@ -61,8 +61,8 @@ class OwnerCategoryController extends Controller
         $category = Category::find($id);
 
         $request->validate([
-            'name' => ['required'],
-            'category_code' => ['required'],
+            'name'              => ['required'],
+            'category_code'     => ['required'],
             'sub_category_name' => ['required'],
         ]);
 
@@ -76,8 +76,8 @@ class OwnerCategoryController extends Controller
             $category->picture_url = $final_name;
         }
 
-        $category->name = $request->name;
-        $category->category_code = $request->category_code;
+        $category->name              = $request->name;
+        $category->category_code     = $request->category_code;
         $category->sub_category_name = $request->sub_category_name;
         $category->update();
 

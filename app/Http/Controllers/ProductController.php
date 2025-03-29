@@ -10,30 +10,30 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $title = 'Product - Perintis Sukses Sejahtera';
-
-        $products = Product::paginate(9);
+        $title       = 'Product - Perintis Sukses Sejahtera';
+        $products    = Product::paginate(9);
         $productsTop = Product::where('is_top_product', 1)->limit(5)->get();
-        $categories = Category::all();
+        $categories  = Category::all();
+
         return view('frontend.pages.product.index', [
-            'type_menu' => 'product',
-            'title'     => $title,
-            'products' => $products,
+            'type_menu'   => 'product',
+            'title'       => $title,
+            'products'    => $products,
             'productsTop' => $productsTop,
-            'categories' => $categories
+            'categories'  => $categories
         ]);
     }
 
     public function detail($slug)
     {
-        $title = 'Product - Perintis Sukses Sejahtera';
-
-        $product = Product::where('slug', $slug)->first();
+        $title          = 'Product Detail - Perintis Sukses Sejahtera';
+        $product        = Product::where('slug', $slug)->first();
         $productsRelate = Product::where('is_top_product', 1)->limit(5)->get();
+
         return view('frontend.pages.product.detail', [
-            'type_menu' => 'product',
-            'title'     => $title,
-            'product' => $product,
+            'type_menu'      => 'product',
+            'title'          => $title,
+            'product'        => $product,
             'productsRelate' => $productsRelate
         ]);
     }

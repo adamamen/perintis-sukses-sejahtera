@@ -13,50 +13,16 @@
             <h2 class="title">We Provide Type of Product</h2>
         </div>
         <div class="product-list">
-            <div class="product-item">
-                <img src="{{ asset('apex-1.0.0/img/service-1.jpg') }}" alt="Air Compressor">
-                <h5>Air Compressor</h5>
-            </div>
-            <div class="product-item">
-                <img src="{{ asset('apex-1.0.0/img/service-2.jpg') }}" alt="Airless Painting">
-                <h5>Airless Painting</h5>
-            </div>
-            <div class="product-item">
-                <img src="{{ asset('apex-1.0.0/img/service-3.jpg') }}" alt="Diesel Generator">
-                <h5>Diesel Generator</h5>
-            </div>
-            <div class="product-item">
-                <img src="{{ asset('apex-1.0.0/img/service-4.jpg') }}" alt="Drilling & Tapping Machine">
-                <h5>Drilling & Tapping Machine</h5>
-            </div>
-            <div class="product-item">
-                <img src="{{ asset('apex-1.0.0/img/service-5.jpg') }}" alt="Gas Cutting Machine">
-                <h5>Gas Cutting Machine</h5>
-            </div>
-            <div class="product-item">
-                <img src="{{ asset('apex-1.0.0/img/service-6.jpg') }}" alt="Hydraulic Punch Machine">
-                <h5>Hydraulic Punch Machine</h5>
-            </div>
-            <div class="product-item">
-                <img src="{{ asset('apex-1.0.0/img/service-1.jpg') }}" alt="Lifting Equipment">
-                <h5>Lifting Equipment</h5>
-            </div>
-            <div class="product-item">
-                <img src="{{ asset('apex-1.0.0/img/service-2.jpg') }}" alt="Safety Equipment">
-                <h5>Safety Equipment</h5>
-            </div>
-            <div class="product-item">
-                <img src="{{ asset('apex-1.0.0/img/service-3.jpg') }}" alt="Tools">
-                <h5>Tools</h5>
-            </div>
-            <div class="product-item">
-                <img src="{{ asset('apex-1.0.0/img/service-4.jpg') }}" alt="Welding Equipment">
-                <h5>Welding Equipment</h5>
-            </div>
+            @foreach ($productCategory as $value)
+                <div class="product-item">
+                    <img src="{{ asset('uploads/' . $value->picture_url) }}" alt="Air Compressor">
+                    <h5>Air Compressor</h5>
+                </div>
+            @endforeach
         </div>
         <br>
         <div class="button-container">
-            <a href="{{ route('explore_products') }}" class="explore">Explore Products</a>
+            <a href="{{ route('product') }}" class="explore">Explore Products</a>
         </div>
     </div>
     <!-- Product Category End -->
@@ -70,51 +36,18 @@
         </div><br>
 
         <div class="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1 g-4 justify-content-center">
-            <div class="col">
-                <div class="card border-0 text-center">
-                    <img src="apex-1.0.0/img/fact-1.jpg" class="card-img-top img-fluid" alt="Product 1">
-                    <div class="card-body">
-                        <h6 class="fw-bold">PRO ARC-200S/250S - Master</h6>
-                        <p class="text-muted">Welding Machine</p>
+            @foreach ($product as $value)
+                <div class="col">
+                    <div class="card border-0 text-center">
+                        <img src="{{ asset('uploads/' . $value->main_picture_url_product) }}" class="card-img-top img-fluid"
+                            alt="Product 1">
+                        <div class="card-body">
+                            <h6 class="fw-bold">{{ $value->name_product }}</h6>
+                            <p class="text-muted">{{ $value->name_category }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card border-0 text-center">
-                    <img src="apex-1.0.0/img/fact-2.jpg" class="card-img-top img-fluid" alt="Product 2">
-                    <div class="card-body">
-                        <h6 class="fw-bold">CMD35 - Unibor</h6>
-                        <p class="text-muted">Magnetic Drill</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card border-0 text-center">
-                    <img src="apex-1.0.0/img/fact-3.jpg" class="card-img-top img-fluid" alt="Product 3">
-                    <div class="card-body">
-                        <h6 class="fw-bold">CUT-100i - Isotech</h6>
-                        <p class="text-muted">Plasma Cutting Machine</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card border-0 text-center">
-                    <img src="apex-1.0.0/img/fact-4.jpg" class="card-img-top img-fluid" alt="Product 4">
-                    <div class="card-body">
-                        <h6 class="fw-bold">RSR-2500 - Isotech</h6>
-                        <p class="text-muted">Welding Machine</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card border-0 text-center">
-                    <img src="apex-1.0.0/img/fact-4.jpg" class="card-img-top img-fluid" alt="Product 5">
-                    <div class="card-body">
-                        <h6 class="fw-bold">RSR-2500 - Isotech</h6>
-                        <p class="text-muted">Welding Machine</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <!-- Top Selling Product End -->
@@ -127,26 +60,14 @@
         </div>
 
         <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 g-4 justify-content-center">
-            <div class="col">
-                <div class="card border-0 text-center shadow-sm p-3">
-                    <img src="apex-1.0.0/img/fact-1.jpg" class="card-img-top img-fluid" alt="Product 1">
+            @foreach ($brand as $value)
+                <div class="col">
+                    <div class="card border-0 text-center shadow-sm p-3">
+                        <img src="{{ asset('uploads/' . $value->logo_picture) }}" class="card-img-top img-fluid"
+                            alt="{{ $value->name }}">
+                    </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card border-0 text-center shadow-sm p-3">
-                    <img src="apex-1.0.0/img/fact-2.jpg" class="card-img-top img-fluid" alt="Product 2">
-                </div>
-            </div>
-            <div class="col">
-                <div class="card border-0 text-center shadow-sm p-3">
-                    <img src="apex-1.0.0/img/fact-3.jpg" class="card-img-top img-fluid" alt="Product 3">
-                </div>
-            </div>
-            <div class="col">
-                <div class="card border-0 text-center shadow-sm p-3">
-                    <img src="apex-1.0.0/img/fact-4.jpg" class="card-img-top img-fluid" alt="Product 4">
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <!-- Find More About Our Brands End -->
@@ -159,17 +80,15 @@
         </div>
 
         <!-- Carousel -->
-        <div id="brandCarousel" class="carousel slide mt-4 carousel-container" data-bs-ride="carousel">
+        {{-- <div id="brandCarousel" class="carousel slide mt-4 carousel-container" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center gap-3">
-                        <img src="apex-1.0.0/img/fact-1.jpg" class="img-fluid" alt="Brand 1">
-                        <img src="apex-1.0.0/img/fact-2.jpg" class="img-fluid" alt="Brand 2">
-                        <img src="apex-1.0.0/img/fact-3.jpg" class="img-fluid" alt="Brand 3">
-                        <img src="apex-1.0.0/img/fact-4.jpg" class="img-fluid" alt="Brand 4">
-                        <img src="apex-1.0.0/img/fact-1.jpg" class="img-fluid" alt="Brand 5">
+                @foreach ($brand as $value)
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center gap-3">
+                            <img src="{{ asset('uploads/' . $value->logo_picture) }}" class="img-fluid" alt="Brand 1">
+                        </div>
                     </div>
-                </div>
+                @endforeach
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-3">
                         <img src="apex-1.0.0/img/fact-4.jpg" class="img-fluid" alt="Brand 6">
@@ -188,11 +107,34 @@
             <button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
             </button>
+        </div> --}}
+
+        <div id="brandCarousel" class="carousel slide mt-4 carousel-container" data-bs-ride="carousel"
+            data-bs-interval="3000">
+            <div class="carousel-inner">
+                @foreach ($brand->chunk(5) as $index => $brandChunk)
+                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                        <div class="d-flex justify-content-center gap-3">
+                            @foreach ($brandChunk as $brand)
+                                <img src="{{ asset('uploads/' . $brand->logo_picture) }}" class="img-fluid brand-logo"
+                                    alt="{{ $brand->name }}">
+                            @endforeach
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+            </button>
         </div>
 
         <!-- Button Explore -->
         <div class="text-center mt-4">
-            <button class="explore">Explore Brands</button>
+            <a href="{{ route('brand') }}" class="explore">Explore Brands</a>
         </div>
     </div>
     <!-- We Provide Brands End -->

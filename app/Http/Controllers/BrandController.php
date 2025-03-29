@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BrandController extends Controller
 {
     public function index()
     {
         $title = 'Brand - Perintis Sukses Sejahtera';
+        $brand = DB::table('brand')->get();
 
         return view('brand.index', [
             'type_menu' => 'brand',
-            'title'     => $title
+            'title'     => $title,
+            'brand'     => $brand
         ]);
     }
 }

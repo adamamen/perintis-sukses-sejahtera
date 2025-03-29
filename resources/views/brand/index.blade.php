@@ -83,26 +83,14 @@
 
         <div class="custom-container">
             <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 g-4 justify-content-center">
-                <div class="col">
-                    <div class="card border-0 text-center shadow-sm p-3">
-                        <img src="apex-1.0.0/img/fact-1.jpg" class="card-img-top img-fluid" alt="Product 1">
+                @foreach ($brand as $value)
+                    <div class="col">
+                        <div class="card border-0 text-center shadow-sm p-3">
+                            <img src="{{ asset('uploads/' . $value->logo_picture) }}" class="card-img-top img-fluid"
+                                alt="Product 1">
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card border-0 text-center shadow-sm p-3">
-                        <img src="apex-1.0.0/img/fact-2.jpg" class="card-img-top img-fluid" alt="Product 2">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-0 text-center shadow-sm p-3">
-                        <img src="apex-1.0.0/img/fact-3.jpg" class="card-img-top img-fluid" alt="Product 3">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-0 text-center shadow-sm p-3">
-                        <img src="apex-1.0.0/img/fact-4.jpg" class="card-img-top img-fluid" alt="Product 4">
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -117,26 +105,14 @@
 
         <div class="custom-container">
             <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 g-4 mt-3">
-                <div class="col">
-                    <div class="card border-0 shadow-sm">
-                        <img src="apex-1.0.0/img/service-1.jpg" class="card-img-top img-fluid" alt="Isotech">
+                @foreach ($brand as $value)
+                    <div class="col">
+                        <div class="card border-0 shadow-sm">
+                            <img src="{{ asset('uploads/' . $value->logo_picture2) }}" class="card-img-top img-fluid"
+                                alt="Isotech">
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card border-0 shadow-sm">
-                        <img src="apex-1.0.0/img/service-2.jpg" class="card-img-top img-fluid" alt="Master Black">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-0 shadow-sm">
-                        <img src="apex-1.0.0/img/service-3.jpg" class="card-img-top img-fluid" alt="West Lake">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card border-0 shadow-sm">
-                        <img src="apex-1.0.0/img/service-4.jpg" class="card-img-top img-fluid" alt="Tenka">
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div><br>
@@ -151,24 +127,29 @@
 
         <div class="custom-container">
             <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 g-4 mt-3">
-                <!-- Gambar Kiri -->
-                <div class="col-lg-6">
+                @foreach ($brand as $value)
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="{{ asset('uploads/' . $value->banner_picture) }}" class="card-img-top img-fluid"
+                                alt="Isotech">
+                        </div>
+                    </div>
+                @endforeach
+                {{-- <div class="col-lg-6">
                     <div class="card border-0 shadow-sm">
                         <img src="apex-1.0.0/img/service-5.jpg" class="card-img-top img-fluid" alt="Isotech">
                     </div>
                 </div>
-                <!-- Gambar Kanan -->
                 <div class="col-lg-6">
                     <div class="card border-0 shadow-sm">
                         <img src="apex-1.0.0/img/service-6.jpg" class="card-img-top img-fluid" alt="Master Black">
                     </div>
                 </div>
-                <!-- Gambar Tengah -->
                 <div class="col-lg-6 mx-auto">
                     <div class="card border-0 shadow-sm">
                         <img src="apex-1.0.0/img/team-1.jpg" class="card-img-top img-fluid" alt="West Lake">
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div><br>
@@ -183,16 +164,14 @@
 
         <div class="custom-container">
             <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 g-4 mt-3">
-                <div class="col">
-                    <div class="card border-0 shadow-sm">
-                        <img src="apex-1.0.0/img/service-5.jpg" class="card-img-top img-fluid" alt="Isotech">
+                @foreach ($brand as $value)
+                    <div class="col">
+                        <div class="card border-0 shadow-sm">
+                            <img src="{{ asset('uploads/' . $value->bg_logo_picture) }}" class="card-img-top img-fluid"
+                                alt="Isotech">
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card border-0 shadow-sm">
-                        <img src="apex-1.0.0/img/service-6.jpg" class="card-img-top img-fluid" alt="Master Black">
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div><br>
